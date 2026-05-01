@@ -9,9 +9,9 @@ const TradeIn = () => {
   const handleConditionChange = (e) => {
     const val = e.target.value;
     setCondition(val);
-    if (val === 'excellent') setEstimatedValue(35);
-    else if (val === 'good') setEstimatedValue(25);
-    else if (val === 'worn') setEstimatedValue(15);
+    if (val === 'excellent') setEstimatedValue(100);
+    else if (val === 'good') setEstimatedValue(75);
+    else if (val === 'worn') setEstimatedValue(40);
     else setEstimatedValue(0);
   };
 
@@ -80,7 +80,7 @@ const TradeIn = () => {
 
               <div className="estimate-result">
                 <span>Estimated Store Credit:</span>
-                <span className="estimate-amount">${estimatedValue}</span>
+                <span className="estimate-amount">{estimatedValue} TND</span>
               </div>
 
               <button className="btn btn-primary w-100" disabled={!condition}>
