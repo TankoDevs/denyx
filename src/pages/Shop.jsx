@@ -6,51 +6,51 @@ import '../components/Products.css'; // Reuse product grid styling
 const shopProducts = [
   {
     id: 'p1',
-    name: 'The Essential Tote',
-    category: 'Bags',
-    price: '$85',
-    priceValue: 85,
-    image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=600&auto=format&fit=crop'
+    name: 'Vintage Straight Leg',
+    category: 'Jeans',
+    price: '185 TND',
+    priceValue: 185,
+    image: 'https://images.unsplash.com/photo-1542272604-78021b369c73?q=80&w=600&auto=format&fit=crop'
   },
   {
     id: 'p2',
-    name: 'Everyday Crossbody',
-    category: 'Accessories',
-    price: '$65',
-    priceValue: 65,
-    image: 'https://images.unsplash.com/photo-1584916201218-f4242ceb4809?q=80&w=600&auto=format&fit=crop'
+    name: 'Classic Indigo Jacket',
+    category: 'Jackets',
+    price: '220 TND',
+    priceValue: 220,
+    image: 'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?q=80&w=600&auto=format&fit=crop'
   },
   {
     id: 'p3',
-    name: 'Tech Sleeve Pro',
-    category: 'Tech Accessories',
-    price: '$45',
-    priceValue: 45,
-    image: 'https://images.unsplash.com/photo-1621570274151-6789f2142273?q=80&w=600&auto=format&fit=crop'
+    name: 'Faded Slim Fit',
+    category: 'Jeans',
+    price: '160 TND',
+    priceValue: 160,
+    image: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=600&auto=format&fit=crop'
   },
   {
     id: 'p4',
-    name: 'Minimalist Pouch',
-    category: 'Accessories',
-    price: '$35',
-    priceValue: 35,
-    image: 'https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?q=80&w=600&auto=format&fit=crop'
+    name: 'Distressed Denim',
+    category: 'Jeans',
+    price: '175 TND',
+    priceValue: 175,
+    image: 'https://images.unsplash.com/photo-1582552938357-32b906df40cb?q=80&w=600&auto=format&fit=crop'
   },
   {
     id: 'p5',
-    name: 'Denim Weekender Bag',
-    category: 'Bags',
-    price: '$120',
-    priceValue: 120,
-    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?q=80&w=600&auto=format&fit=crop'
+    name: 'Upcycled Patchwork',
+    category: 'Jeans',
+    price: '240 TND',
+    priceValue: 240,
+    image: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=600&auto=format&fit=crop'
   },
   {
     id: 'p6',
-    name: 'Classic Cardholder',
-    category: 'Accessories',
-    price: '$25',
-    priceValue: 25,
-    image: 'https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?q=80&w=600&auto=format&fit=crop'
+    name: 'Denim Overshirt',
+    category: 'Jackets',
+    price: '190 TND',
+    priceValue: 190,
+    image: 'https://images.unsplash.com/photo-1523398002811-999aa8d9512e?q=80&w=600&auto=format&fit=crop'
   }
 ];
 

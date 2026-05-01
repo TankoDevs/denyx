@@ -36,8 +36,8 @@
   overflow: hidden;
   box-shadow: var(--shadow-soft), var(--shadow-glow);
   margin-bottom: 1.5rem;
-  background: rgba(10, 15, 28, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--color-bg-base);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .chatbot-header {

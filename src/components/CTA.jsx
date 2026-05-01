@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './CTA.css';
 
 const CTA = () => {
@@ -12,8 +13,8 @@ const CTA = () => {
               Join the movement towards sustainable fashion. Our limited edition pieces sell out fast.
             </p>
             <div className="cta-actions">
-              <button className="btn btn-primary cta-btn">Shop the Collection</button>
-              <button className="btn btn-ghost cta-btn">Read Our Story</button>
+              <Link to="/shop" className="btn btn-primary cta-btn">Shop the Collection</Link>
+              <Link to="/shop" className="btn btn-ghost cta-btn">Explore Collection</Link>
             </div>
           </div>
           <div className="cta-shape cta-shape-1"></div>
