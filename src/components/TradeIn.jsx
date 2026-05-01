@@ -9,9 +9,9 @@ const TradeIn = () => {
   const handleConditionChange = (e) => {
     const val = e.target.value;
     setCondition(val);
-    if (val === 'excellent') setEstimatedValue(100);
-    else if (val === 'good') setEstimatedValue(75);
-    else if (val === 'worn') setEstimatedValue(40);
+    if (val === 'excellent') setEstimatedValue(15);
+    else if (val === 'good') setEstimatedValue(10);
+    else if (val === 'worn') setEstimatedValue(5);
     else setEstimatedValue(0);
   };
 

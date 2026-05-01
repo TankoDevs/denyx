@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700;800&display=swap');
 
 :root {
-  /* Catchy Vibrant Colors */
-  --color-primary-dark: #0A0F1C;
-  --color-primary-main: #1D4ED8; /* Vibrant Royal Blue */
-  --color-primary-light: #3B82F6; /* Bright Blue */
-  --color-secondary-blue: #60A5FA; /* Soft Light Blue */
-  --color-accent-taupe: #9CA3AF;
-  --color-accent-beige: #FBBF24; /* Catchy Amber/Gold for contrast */
+  /* Catchy Vibrant Futuristic Colors */
+  --color-primary-dark: #02040A;
+  --color-primary-main: #00F0FF; /* Neon Cyan */
+  --color-primary-light: #59E8FF;
+  --color-secondary-blue: #7000FF; /* Electric Purple */
+  --color-accent-taupe: #8B5CF6;
+  --color-accent-beige: #39FF14; /* Neon Green */
 
-  --color-text-main: #F8FAFC;
+  --color-text-main: #FFFFFF;
   --color-text-muted: #94A3B8;
 
-  --color-bg-base: #050A14;
-  --color-bg-card: rgba(27, 58, 104, 0.2);
+  --color-bg-base: #030614;
+  --color-bg-card: rgba(112, 0, 255, 0.1);
 
   /* Typography */
   --font-heading: 'Montserrat', sans-serif;
