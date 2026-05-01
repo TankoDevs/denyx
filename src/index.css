@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700;800&display=swap');
+
+:root {
+  /* Catchy Vibrant Colors */
+  --color-primary-dark: #0A0F1C;
+  --color-primary-main: #1D4ED8; /* Vibrant Royal Blue */
+  --color-primary-light: #3B82F6; /* Bright Blue */
+  --color-secondary-blue: #60A5FA; /* Soft Light Blue */
+  --color-accent-taupe: #9CA3AF;
+  --color-accent-beige: #FBBF24; /* Catchy Amber/Gold for contrast */
+
+  --color-text-main: #F8FAFC;
+  --color-text-muted: #94A3B8;
+
+  --color-bg-base: #050A14;
+  --color-bg-card: rgba(27, 58, 104, 0.2);
+
+  /* Typography */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Effects */
+  --shadow-soft: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --shadow-glow: 0 0 20px rgba(40, 91, 131, 0.5);
+  --blur-md: blur(12px);
+  --blur-lg: blur(20px);
+
+  /* Transitions */
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg-base);
+  color: var(--color-text-main);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--font-body);
+  border: none;
+  background: none;
+}
+
+/* Reusable Utility Classes */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.glass-panel {
+  background: var(--color-bg-card);
+  backdrop-filter: var(--blur-md);
+  -webkit-backdrop-filter: var(--blur-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--color-text-main);
+  color: var(--color-bg-base);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  background-color: var(--color-accent-beige);
+  box-shadow: 0 4px 12px rgba(209, 189, 164, 0.3);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text-main);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Layout Utilities */
+.section {
+  padding: 8rem 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem 0;
+  }
+  .container {
+    padding: 0 1.5rem;
+  }
+}
