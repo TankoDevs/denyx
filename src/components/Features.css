@@ -36,14 +36,13 @@
 
 .feature-card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-glow);
-  border-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 .feature-icon {
-  color: var(--color-secondary-blue);
+  color: var(--color-text-main);
   margin-bottom: 1.5rem;
-  background: rgba(86, 125, 166, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   padding: 1rem;
   border-radius: 12px;
   display: inline-flex;

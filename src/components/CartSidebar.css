@@ -117,7 +117,7 @@
 }
 
 .cart-item-price {
-  color: var(--color-accent-beige);
+  color: var(--color-text-main);
   font-weight: 600;
   margin-bottom: auto;
 }
@@ -164,7 +164,7 @@
 .cart-footer {
   padding: 1.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  background: rgba(11, 19, 33, 0.8);
+  background: var(--color-bg-base);
 }
 
 .cart-total {

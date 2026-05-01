@@ -1,5 +1,5 @@
 .footer {
-  background-color: #05080f; /* Even darker than base background */
+  background-color: var(--color-bg-base);
   padding-top: 5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
@@ -45,7 +45,8 @@
 }
 
 .social-link:hover {
-  background: var(--color-secondary-blue);
+  background: var(--color-text-main);
+  color: var(--color-bg-base);
   transform: translateY(-3px);
 }
 
@@ -70,7 +71,7 @@
 }
 
 .footer-links a:hover {
-  color: var(--color-accent-beige);
+  color: var(--color-text-main);
 }
 
 .footer-bottom {

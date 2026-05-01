@@ -8,24 +8,10 @@
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   padding: 4rem;
-  background: linear-gradient(145deg, rgba(10, 15, 28, 0.8), rgba(29, 78, 216, 0.15));
-  border: 1px solid rgba(59, 130, 246, 0.3);
-  box-shadow: 0 0 30px rgba(29, 78, 216, 0.15), inset 0 0 20px rgba(59, 130, 246, 0.05);
+  background: var(--color-bg-base);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
-}
-
-.trade-in-wrapper::before {
-  content: '';
-  position: absolute;
-  top: -20%;
-  right: -10%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.25) 0%, transparent 70%);
-  filter: blur(40px);
-  z-index: 0;
-  pointer-events: none;
 }
 
 .trade-in-content {
@@ -39,15 +25,14 @@
 .trade-in-badge {
   display: inline-block;
   padding: 0.5rem 1.2rem;
-  background: rgba(59, 130, 246, 0.15);
-  color: var(--color-primary-light);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-main);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 9999px;
   font-size: 0.85rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   width: fit-content;
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
   letter-spacing: 1px;
   text-transform: uppercase;
 }
@@ -76,7 +61,7 @@
   display: flex;
   align-items: center;
   gap: 1.25rem;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.02);
   padding: 1.25rem;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -85,38 +70,20 @@
   overflow: hidden;
 }
 
-.step-item::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 4px;
-  background: var(--color-primary-main);
-  box-shadow: 0 0 15px var(--color-primary-main);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
 .step-item:hover {
-  background: rgba(255, 255, 255, 0.08);
-  transform: translateX(10px);
-  border-color: rgba(255, 255, 255, 0.1);
-}
-
-.step-item:hover::before {
-  opacity: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 .step-icon {
-  background: linear-gradient(135deg, var(--color-primary-main), var(--color-primary-light));
-  color: #000;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-text-main);
   padding: 1rem;
   border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 20px var(--color-primary-main);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   z-index: 1;
   flex-shrink: 0;
@@ -136,10 +103,9 @@
 
 /* Form / Calculator Side */
 .trade-in-calculator {
-  background: rgba(10, 15, 28, 0.7);
+  background: rgba(255, 255, 255, 0.02);
   padding: 2.5rem;
-  border: 1px solid rgba(59, 130, 246, 0.4);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   position: relative;
   z-index: 1;
@@ -178,21 +144,19 @@
 .form-input {
   width: 100%;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   color: var(--color-text-main);
   font-family: var(--font-body);
   font-size: 1rem;
   transition: all 0.3s ease;
-  backdrop-filter: blur(4px);
 }
 
 .form-input:focus {
   outline: none;
-  border-color: var(--color-primary-light);
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
-  background: rgba(29, 78, 216, 0.1);
+  border-color: var(--color-text-main);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .form-input option {
@@ -219,9 +183,8 @@
 .estimate-amount {
   font-size: 2.2rem;
   font-weight: 800;
-  color: var(--color-accent-beige);
+  color: var(--color-text-main);
   font-family: var(--font-heading);
-  text-shadow: 0 0 15px var(--color-accent-beige), 0 0 30px var(--color-accent-beige);
   transition: all 0.3s ease;
 }
 
@@ -237,18 +200,18 @@
 }
 
 .trade-in-calculator .btn-primary {
-  background: linear-gradient(90deg, var(--color-primary-main), var(--color-primary-light));
+  background: var(--color-text-main);
+  color: var(--color-bg-base);
   border: none;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   padding: 1rem;
-  box-shadow: 0 4px 15px rgba(29, 78, 216, 0.4);
   transition: all 0.3s ease;
 }
 
 .trade-in-calculator .btn-primary:hover:not(:disabled) {
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.7);
+  background: #E5E5E5;
   transform: translateY(-2px);
 }
 

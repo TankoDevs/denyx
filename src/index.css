@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700;800&display=swap');
 
 :root {
-  /* Catchy Vibrant Futuristic Colors */
-  --color-primary-dark: #02040A;
-  --color-primary-main: #00F0FF; /* Neon Cyan */
-  --color-primary-light: #59E8FF;
-  --color-secondary-blue: #7000FF; /* Electric Purple */
-  --color-accent-taupe: #8B5CF6;
-  --color-accent-beige: #39FF14; /* Neon Green */
+  /* Futuristic Minimalist Colors */
+  --color-primary-dark: #000000;
+  --color-primary-main: #FFFFFF;
+  --color-primary-light: #E5E5E5;
+  --color-secondary-blue: #3B82F6;
+  --color-accent-taupe: #333333;
+  --color-accent-beige: #3B82F6;
 
   --color-text-main: #FFFFFF;
-  --color-text-muted: #94A3B8;
+  --color-text-muted: #888888;
 
-  --color-bg-base: #030614;
-  --color-bg-card: rgba(112, 0, 255, 0.1);
+  --color-bg-base: #000000;
+  --color-bg-card: rgba(255, 255, 255, 0.03);
 
   /* Typography */
   --font-heading: 'Montserrat', sans-serif;
