@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import CartSidebar from './components/CartSidebar';
+import ChatBot from './components/ChatBot';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 import { CartProvider } from './context/CartContext';
@@ -19,6 +20,7 @@ function App() {
             <Route path="/shop" element={<Shop />} />
           </Routes>
         </main>
+        <ChatBot />
         <Footer />
       </BrowserRouter>
     </CartProvider>
