@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ShoppingBag } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { useCart } from '../context/CartContext';
 import './NavBar.css';
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { cartCount, setIsCartOpen } = useCart();
+  const location = useLocation();
+
+  const isShopPage = location.pathname === '/shop';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,21 +24,29 @@ const NavBar = () => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
         <a href="/" className="logo">
-          <img src="/logo.svg" alt="DENYX Logo" className="logo-img" />
+          <img src="/icone.svg" alt="DENYX Logo" className="logo-img" />
           <span className="logo-text">DENYX</span>
         </a>
 
         <div className="nav-links desktop-only">
-          <a href="#features" className="nav-link">Features</a>
-          <a href="#process" className="nav-link">Our Process</a>
-          <a href="#products" className="nav-link">Products</a>
+          <Link to="/" className={`nav-link ${!isShopPage ? 'active' : ''}`}>Home</Link>
+          <Link to="/shop" className={`nav-link ${isShopPage ? 'active' : ''}`}>Shop Collection</Link>
         </div>
 
-        <div className="nav-actions desktop-only">
-          <button className="btn btn-primary">Shop Collection</button>
+        <div className="nav-actions desktop-only" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+          <button 
+            className="cart-toggle-btn"
+            onClick={() => setIsCartOpen(true)}
+            style={{ position: 'relative' }}
+          >
+            <ShoppingBag size={24} />
+            {cartCount > 0 && (
+              <span className="cart-badge">{cartCount}</span>
+            )}
+          </button>
         </div>
 
-        <button 
+        <button
           className="mobile-menu-btn"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
@@ -43,10 +57,17 @@ const NavBar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="mobile-menu glass-panel">
-          <a href="#features" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Features</a>
-          <a href="#process" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Our Process</a>
-          <a href="#products" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Products</a>
-          <button className="btn btn-primary">Shop Collection</button>
+          <Link to="/" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
+          <Link to="/shop" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Shop Collection</Link>
+          <button 
+            className="btn btn-primary" 
+            onClick={() => {
+              setIsMobileMenuOpen(false);
+              setIsCartOpen(true);
+            }}
+          >
+            Cart ({cartCount})
+          </button>
         </div>
       )}
     </nav>

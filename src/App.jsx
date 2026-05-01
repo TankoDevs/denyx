@@ -1,25 +1,27 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import Process from './components/Process';
-import TradeIn from './components/TradeIn';
-import CTA from './components/CTA';
 import Footer from './components/Footer';
+import CartSidebar from './components/CartSidebar';
+import Home from './pages/Home';
+import Shop from './pages/Shop';
+import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
-    <>
-      <NavBar />
-      <main>
-        <Hero />
-        <Features />
-        <Process />
-        <TradeIn />
-        <CTA />
-      </main>
-      <Footer />
-    </>
+    <CartProvider>
+      <BrowserRouter>
+        <NavBar />
+        <CartSidebar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/shop" element={<Shop />} />
+          </Routes>
+        </main>
+        <Footer />
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 

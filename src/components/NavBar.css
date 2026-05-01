@@ -106,3 +106,28 @@
     display: flex;
   }
 }
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--color-accent-beige);
+  color: var(--color-primary-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-toggle-btn {
+  color: var(--color-text-main);
+  transition: var(--transition-smooth);
+}
+
+.cart-toggle-btn:hover {
+  color: var(--color-accent-beige);
+}
