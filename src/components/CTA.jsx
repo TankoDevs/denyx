@@ -13,7 +13,6 @@ const CTA = () => {
               Join the movement towards sustainable fashion. Our limited edition pieces sell out fast.
             </p>
             <div className="cta-actions">
-              <Link to="/shop" className="btn btn-primary cta-btn">Shop the Collection</Link>
               <Link to="/shop" className="btn btn-ghost cta-btn">Explore Collection</Link>
             </div>
           </div>

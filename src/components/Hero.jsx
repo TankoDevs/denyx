@@ -21,7 +21,6 @@ const Hero = () => {
             <Link to="/shop" className="btn btn-primary">
               Explore Collection <ArrowRight size={18} style={{ marginLeft: '8px' }} />
             </Link>
-            <Link to="/shop" className="btn btn-ghost">Shop Collection</Link>
           </div>
         </div>
       </div>

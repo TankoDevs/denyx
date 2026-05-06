@@ -17,14 +17,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(29, 78, 216, 0.4);
+  box-shadow: 0 4px 20px rgba(40, 91, 131, 0.4);
   transition: var(--transition-smooth);
 }
 
 .chatbot-fab:hover {
   transform: scale(1.05) translateY(-5px);
   background: var(--color-primary-light);
-  box-shadow: 0 8px 25px rgba(29, 78, 216, 0.6);
+  box-shadow: 0 8px 25px rgba(40, 91, 131, 0.6);
 }
 
 .chatbot-window {
@@ -46,7 +46,7 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  background: rgba(29, 78, 216, 0.15); 
+  background: rgba(86, 125, 166, 0.15); 
 }
 
 .chatbot-header-info {
@@ -74,7 +74,7 @@
 
 .chatbot-status {
   font-size: 0.75rem;
-  color: #10B981; 
+  color: var(--color-accent-beige); 
   margin: 0;
   font-weight: 500;
 }

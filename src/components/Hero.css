@@ -66,7 +66,7 @@
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #FFFFFF, #888888);
+  background: linear-gradient(to right, var(--color-text-main), var(--color-secondary-blue));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

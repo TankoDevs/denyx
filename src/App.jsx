@@ -6,6 +6,9 @@ import CartSidebar from './components/CartSidebar';
 import ChatBot from './components/ChatBot';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
+import Login from './pages/Login';
+import Customise from './pages/Customise';
+import TailorForm from './pages/TailorForm';
 import { CartProvider } from './context/CartContext';
 
 function App() {
@@ -18,6 +21,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/shop" element={<Shop />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/customise" element={<Customise />} />
+            <Route path="/tailor-form" element={<TailorForm />} />
           </Routes>
         </main>
         <ChatBot />

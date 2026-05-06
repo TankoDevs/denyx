@@ -80,7 +80,7 @@ const CartSidebar = () => {
           <div className="cart-footer">
             <div className="cart-total">
               <span>Subtotal</span>
-              <span>${cartTotal.toFixed(2)}</span>
+              <span>{cartTotal.toFixed(2)} TND</span>
             </div>
             <p className="cart-taxes-note">Taxes and shipping calculated at checkout</p>
             <button className="btn btn-primary w-100" onClick={() => alert("Checkout flow coming soon!")}>

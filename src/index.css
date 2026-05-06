@@ -1,22 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@500;600;700;800&display=swap');
 
 :root {
-  /* Futuristic Minimalist Colors */
-  --color-primary-dark: #000000;
-  --color-primary-main: #FFFFFF;
-  --color-primary-light: #E5E5E5;
-  --color-secondary-blue: #3B82F6;
-  --color-accent-taupe: #333333;
-  --color-accent-beige: #3B82F6;
+  /* Brand Colors */
+  --color-primary-dark: #1B3A68;
+  --color-primary-main: #285B83;
+  --color-secondary-blue: #567DA6;
+  --color-accent-taupe: #8B7F71;
+  --color-accent-beige: #D1BDA4;
 
-  --color-text-main: #FFFFFF;
-  --color-text-muted: #888888;
+  --color-text-main: #D1BDA4;
+  --color-text-muted: #8B7F71;
 
-  --color-bg-base: #000000;
+  --color-bg-base: #1B3A68;
   --color-bg-card: rgba(255, 255, 255, 0.03);
 
   /* Typography */
-  --font-heading: 'Montserrat', sans-serif;
+  --font-heading: 'Franklin Gothic Heavy', 'Arial Black', sans-serif;
   --font-body: 'Inter', sans-serif;
 
   /* Effects */

@@ -59,8 +59,13 @@
   position: relative;
 }
 
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
   color: var(--color-text-main);
+}
+
+.nav-link.active::after {
+  width: 100%;
 }
 
 .nav-link::after {

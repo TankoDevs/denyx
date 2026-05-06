@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ShoppingBag } from 'lucide-react';
+import { Menu, X, ShoppingBag, User } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import './NavBar.css';
@@ -29,11 +29,15 @@ const NavBar = () => {
         </a>
 
         <div className="nav-links desktop-only">
-          <Link to="/" className={`nav-link ${!isShopPage ? 'active' : ''}`}>Home</Link>
-          <Link to="/shop" className={`nav-link ${isShopPage ? 'active' : ''}`}>Shop Collection</Link>
+          <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
+          <Link to="/shop" className={`nav-link ${location.pathname === '/shop' ? 'active' : ''}`}>Shop</Link>
+          <Link to="/customise" className={`nav-link ${location.pathname === '/customise' ? 'active' : ''}`}>Customise</Link>
         </div>
 
         <div className="nav-actions desktop-only" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+          <Link to="/login" className="nav-link" style={{ display: 'flex', alignItems: 'center' }}>
+            <User size={24} />
+          </Link>
           <button 
             className="cart-toggle-btn"
             onClick={() => setIsCartOpen(true)}
@@ -58,7 +62,9 @@ const NavBar = () => {
       {isMobileMenuOpen && (
         <div className="mobile-menu glass-panel">
           <Link to="/" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-          <Link to="/shop" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Shop Collection</Link>
+          <Link to="/shop" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Shop</Link>
+          <Link to="/customise" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Customise</Link>
+          <Link to="/login" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Login</Link>
           <button 
             className="btn btn-primary" 
             onClick={() => {

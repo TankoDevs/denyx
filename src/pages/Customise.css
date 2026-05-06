@@ -1,0 +1,79 @@
+.customise-page {
+  padding-top: 120px;
+  min-height: 100vh;
+  background: var(--color-bg-base);
+}
+
+.customise-header {
+  margin-bottom: 4rem;
+}
+
+.customise-header h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+}
+
+.customise-header p {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  padding-bottom: 5rem;
+}
+
+.option-card {
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  padding: 0;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.option-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-accent-beige);
+}
+
+.option-image {
+  height: 250px;
+  overflow: hidden;
+}
+
+.option-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.option-card:hover .option-image img {
+  transform: scale(1.05);
+}
+
+.option-info {
+  padding: 2rem;
+  text-align: center;
+}
+
+.option-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-main);
+}
+
+.option-info p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.option-info .btn {
+  width: 100%;
+}
