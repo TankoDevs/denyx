@@ -32,6 +32,7 @@ const NavBar = () => {
           <Link to="/" className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
           <Link to="/shop" className={`nav-link ${location.pathname === '/shop' ? 'active' : ''}`}>Shop</Link>
           <Link to="/customise" className={`nav-link ${location.pathname === '/customise' ? 'active' : ''}`}>Customise</Link>
+          <Link to="/marketplace" className={`nav-link ${location.pathname === '/marketplace' ? 'active' : ''}`}>Marketplace</Link>
         </div>
 
         <div className="nav-actions desktop-only" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
@@ -64,6 +65,7 @@ const NavBar = () => {
           <Link to="/" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
           <Link to="/shop" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Shop</Link>
           <Link to="/customise" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Customise</Link>
+          <Link to="/marketplace" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Marketplace</Link>
           <Link to="/login" className="nav-link" onClick={() => setIsMobileMenuOpen(false)}>Login</Link>
           <button 
             className="btn btn-primary" 
