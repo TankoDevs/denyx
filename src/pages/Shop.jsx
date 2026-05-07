@@ -11,7 +11,7 @@ const shopProducts = [
     category: 'Jeans',
     price: '185 TND',
     priceValue: 185,
-    image: 'https://images.unsplash.com/photo-1542272604-78021b369c73?q=80&w=800&auto=format&fit=crop'
+    image: 'https://loremflickr.com/800/800/denim,fashion?lock=11'
   },
   {
     id: 'p2',
@@ -19,7 +19,7 @@ const shopProducts = [
     category: 'Jackets',
     price: '220 TND',
     priceValue: 220,
-    image: 'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?q=80&w=800&auto=format&fit=crop'
+    image: 'https://loremflickr.com/800/800/denim,jacket?lock=12'
   },
   {
     id: 'p3',
@@ -27,7 +27,7 @@ const shopProducts = [
     category: 'Jeans',
     price: '160 TND',
     priceValue: 160,
-    image: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=800&auto=format&fit=crop'
+    image: 'https://loremflickr.com/800/800/denim,jeans?lock=13'
   },
   {
     id: 'p4',
@@ -35,7 +35,7 @@ const shopProducts = [
     category: 'Jeans',
     price: '175 TND',
     priceValue: 175,
-    image: 'https://images.unsplash.com/photo-1582552938357-32b906df40cb?q=80&w=800&auto=format&fit=crop'
+    image: 'https://loremflickr.com/800/800/vintage,denim?lock=14'
   },
   {
     id: 'p5',
@@ -43,7 +43,7 @@ const shopProducts = [
     category: 'Jeans',
     price: '240 TND',
     priceValue: 240,
-    image: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?q=80&w=800&auto=format&fit=crop'
+    image: 'https://loremflickr.com/800/800/denim,patchwork?lock=15'
   },
   {
     id: 'p6',
@@ -51,7 +51,7 @@ const shopProducts = [
     category: 'Jackets',
     price: '190 TND',
     priceValue: 190,
-    image: 'https://images.unsplash.com/photo-1523398002811-999aa8d9512e?q=80&w=800&auto=format&fit=crop'
+    image: 'https://loremflickr.com/800/800/denim,shirt?lock=16'
   }
 ];
 

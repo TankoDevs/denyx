@@ -10,7 +10,7 @@ const initialMarketplaceItems = [
     id: 'm1',
     name: 'Vintage 501 Levi\'s',
     condition: 'Excellent',
-    image: 'https://images.unsplash.com/photo-1542272604-78021b369c73?q=80&w=800&auto=format&fit=crop',
+    image: 'https://loremflickr.com/800/800/vintage,jeans?lock=21',
     seller: 'Amine',
     price: '40 TND',
     priceValue: 40
@@ -19,7 +19,7 @@ const initialMarketplaceItems = [
     id: 'm2',
     name: 'Denim Trucker Jacket',
     condition: 'Like New',
-    image: 'https://images.unsplash.com/photo-1495105787522-5334e3ffa0ef?q=80&w=800&auto=format&fit=crop',
+    image: 'https://loremflickr.com/800/800/denim,jacket?lock=22',
     seller: 'Sarra',
     price: '120 TND',
     priceValue: 120
@@ -28,7 +28,7 @@ const initialMarketplaceItems = [
     id: 'm3',
     name: 'High-Waisted Shorts',
     condition: 'Good',
-    image: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?q=80&w=800&auto=format&fit=crop',
+    image: 'https://loremflickr.com/800/800/denim,shorts?lock=23',
     seller: 'Youssef',
     price: '45 TND',
     priceValue: 45
@@ -37,7 +37,7 @@ const initialMarketplaceItems = [
     id: 'm4',
     name: 'Denim Mini Skirt',
     condition: 'Excellent',
-    image: 'https://images.unsplash.com/photo-1582142306909-195724d339aa?q=80&w=800&auto=format&fit=crop',
+    image: 'https://loremflickr.com/800/800/denim,skirt?lock=24',
     seller: 'Meryem',
     price: '65 TND',
     priceValue: 65
@@ -64,7 +64,7 @@ const Marketplace = () => {
     name: '',
     price: '',
     condition: 'Good',
-    image: 'https://images.unsplash.com/photo-1582552938357-32b906df40cb?q=80&w=800&auto=format&fit=crop',
+    image: 'https://loremflickr.com/800/800/denim,clothing?lock=25',
     imageFile: null,
     imagePreview: null
   });
@@ -104,7 +104,7 @@ const Marketplace = () => {
       setShowSellForm(false);
       setNewItem({
         name: '', price: '', condition: 'Good',
-        image: 'https://images.unsplash.com/photo-1582552938357-32b906df40cb?q=80&w=800&auto=format&fit=crop',
+        image: 'https://loremflickr.com/800/800/denim,clothing?lock=25',
         imageFile: null, imagePreview: null
       });
     } catch (error) {

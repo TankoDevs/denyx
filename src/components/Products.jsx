@@ -8,28 +8,28 @@ const productsData = [
     name: 'The Essential Tote',
     category: 'Bags',
     price: '85 TND',
-    image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=800&auto=format&fit=crop'
+    image: 'https://loremflickr.com/800/800/denim,bag?lock=41'
   },
   {
     id: 2,
     name: 'Everyday Crossbody',
     category: 'Accessories',
     price: '65 TND',
-    image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=800&auto=format&fit=crop'
+    image: 'https://loremflickr.com/800/800/denim,accessories?lock=42'
   },
   {
     id: 3,
     name: 'Tech Sleeve Pro',
     category: 'Tech Accessories',
     price: '45 TND',
-    image: 'https://images.unsplash.com/photo-1621330396173-e41b1cafd17f?q=80&w=800&auto=format&fit=crop'
+    image: 'https://loremflickr.com/800/800/denim,laptop?lock=43'
   },
   {
     id: 4,
     name: 'Minimalist Pouch',
     category: 'Accessories',
     price: '35 TND',
-    image: 'https://images.unsplash.com/photo-1582552938357-32b906df40cb?q=80&w=800&auto=format&fit=crop'
+    image: 'https://loremflickr.com/800/800/denim,pouch?lock=44'
   }
 ];
 
