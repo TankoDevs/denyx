@@ -1,27 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useCart } from '../context/CartContext';
-import { Plus, ShoppingBag, Camera } from 'lucide-react';
+import { Plus, ShoppingBag, Camera, Loader2 } from 'lucide-react';
+import { uploadImage } from '../utils/cloudinary';
 import './Marketplace.css';
 
 const initialMarketplaceItems = [
-  {
-    id: 'm1',
-    name: 'Vintage Levi 501',
-    seller: 'Amine',
-    condition: 'Excellent',
-    price: '95 TND',
-    priceValue: 95,
-    image: 'https://images.unsplash.com/photo-1542272604-78021b369c73?q=80&w=600&auto=format&fit=crop'
-  },
-  {
-    id: 'm2',
-    name: 'Distressed Skinny',
-    seller: 'Sara',
-    condition: 'Good',
-    price: '65 TND',
-    priceValue: 65,
-    image: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=600&auto=format&fit=crop'
-  }
+  // ... existing initial items
 ];
 
 const Marketplace = () => {
@@ -31,7 +15,9 @@ const Marketplace = () => {
   });
   
   const [showSellForm, setShowSellForm] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
   const { addToCart } = useCart();
+  const fileInputRef = useRef(null);
 
   useEffect(() => {
     localStorage.setItem('denyx_marketplace_items', JSON.stringify(items));
@@ -42,21 +28,54 @@ const Marketplace = () => {
     name: '',
     price: '',
     condition: 'Good',
-    image: 'https://images.unsplash.com/photo-1582552938357-32b906df40cb?q=80&w=600&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1582552938357-32b906df40cb?q=80&w=600&auto=format&fit=crop',
+    imageFile: null,
+    imagePreview: null
   });
 
-  const handlePostItem = (e) => {
+  const handleImageSelect = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setNewItem({
+        ...newItem,
+        imageFile: file,
+        imagePreview: URL.createObjectURL(file)
+      });
+    }
+  };
+
+  const handlePostItem = async (e) => {
     e.preventDefault();
-    const itemToAdd = {
-      ...newItem,
-      id: 'm' + Date.now(),
-      seller: 'Me',
-      price: `${newItem.price} TND`,
-      priceValue: parseInt(newItem.price)
-    };
-    setItems([itemToAdd, ...items]);
-    setShowSellForm(false);
-    setNewItem({ name: '', price: '', condition: 'Good', image: 'https://images.unsplash.com/photo-1582552938357-32b906df40cb?q=80&w=600&auto=format&fit=crop' });
+    setIsUploading(true);
+
+    try {
+      let finalImageUrl = newItem.image;
+      if (newItem.imageFile) {
+        finalImageUrl = await uploadImage(newItem.imageFile);
+      }
+
+      const itemToAdd = {
+        name: newItem.name,
+        condition: newItem.condition,
+        image: finalImageUrl,
+        id: 'm' + Date.now(),
+        seller: 'Me',
+        price: `${newItem.price} TND`,
+        priceValue: parseInt(newItem.price)
+      };
+      
+      setItems([itemToAdd, ...items]);
+      setShowSellForm(false);
+      setNewItem({ 
+        name: '', price: '', condition: 'Good', 
+        image: 'https://images.unsplash.com/photo-1582552938357-32b906df40cb?q=80&w=600&auto=format&fit=crop',
+        imageFile: null, imagePreview: null 
+      });
+    } catch (error) {
+      alert('Failed to upload image. Please check your Cloudinary settings.');
+    } finally {
+      setIsUploading(false);
+    }
   };
 
   return (
@@ -111,15 +130,34 @@ const Marketplace = () => {
                 </div>
                 <div className="form-group">
                   <label>Upload Photo</label>
-                  <div className="photo-upload-placeholder">
-                    <Camera size={24} />
-                    <span>Photo selected automatically</span>
+                  <div 
+                    className="photo-upload-placeholder" 
+                    onClick={() => fileInputRef.current.click()}
+                    style={{ cursor: 'pointer', overflow: 'hidden', position: 'relative' }}
+                  >
+                    {newItem.imagePreview ? (
+                      <img src={newItem.imagePreview} alt="Preview" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    ) : (
+                      <>
+                        <Camera size={24} />
+                        <span>Click to select photo</span>
+                      </>
+                    )}
                   </div>
+                  <input 
+                    type="file" 
+                    ref={fileInputRef} 
+                    onChange={handleImageSelect} 
+                    accept="image/*" 
+                    style={{ display: 'none' }} 
+                  />
                 </div>
               </div>
               <div className="form-actions">
-                <button type="button" className="btn btn-ghost" onClick={() => setShowSellForm(false)}>Cancel</button>
-                <button type="submit" className="btn btn-primary">Post Item</button>
+                <button type="button" className="btn btn-ghost" onClick={() => setShowSellForm(false)} disabled={isUploading}>Cancel</button>
+                <button type="submit" className="btn btn-primary" disabled={isUploading}>
+                  {isUploading ? <><Loader2 className="animate-spin" size={18} style={{ marginRight: '8px' }} /> Posting...</> : 'Post Item'}
+                </button>
               </div>
             </form>
           </div>

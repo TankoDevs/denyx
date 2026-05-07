@@ -1,10 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Image as ImageIcon, Loader2 } from 'lucide-react';
+import { uploadImage } from '../utils/cloudinary';
 import './ChatBot.css';
 
 const WEBHOOK_URL = import.meta.env.VITE_WEBHOOK_URL;
-const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
-const CLOUDINARY_UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,25 +37,6 @@ const ChatBot = () => {
     }
   };
 
-  const uploadToCloudinary = async (file) => {
-    const formData = new FormData();
-    formData.append('file', file);
-    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
-    
-    const response = await fetch(`https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`, {
-      method: 'POST',
-      body: formData,
-    });
-    
-    if (!response.ok) {
-      const errorData = await response.json();
-      console.error('Cloudinary Error Detail:', errorData);
-      throw new Error(errorData.error?.message || 'Cloudinary upload failed');
-    }
-    const data = await response.json();
-    return data.secure_url;
-  };
-
   const handleSend = async (e) => {
     e.preventDefault();
     if ((!message.trim() && !image) || isSending) return;
@@ -68,7 +48,7 @@ const ChatBot = () => {
     try {
       let imageUrl = '';
       if (image) {
-        imageUrl = await uploadToCloudinary(image);
+        imageUrl = await uploadImage(image);
       }
 
       // Send to webhook
