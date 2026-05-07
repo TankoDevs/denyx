@@ -10,7 +10,7 @@ const initialMarketplaceItems = [
     id: 'm1',
     name: 'Vintage 501 Levi\'s',
     condition: 'Excellent',
-    image: 'https://loremflickr.com/800/800/vintage,jeans?lock=21',
+    image: 'https://source.unsplash.com/800x800/?vintage,501,jeans&sig=11',
     seller: 'Amine',
     price: '25 TND',
     priceValue: 25
@@ -19,7 +19,7 @@ const initialMarketplaceItems = [
     id: 'm2',
     name: 'Denim Trucker Jacket',
     condition: 'Like New',
-    image: 'https://loremflickr.com/800/800/denim,jacket?lock=22',
+    image: 'https://source.unsplash.com/800x800/?denim,trucker,jacket&sig=12',
     seller: 'Sarra',
     price: '50 TND',
     priceValue: 50
@@ -28,7 +28,7 @@ const initialMarketplaceItems = [
     id: 'm3',
     name: 'High-Waisted Shorts',
     condition: 'Good',
-    image: 'https://loremflickr.com/800/800/denim,shorts?lock=23',
+    image: 'https://source.unsplash.com/800x800/?denim,shorts&sig=13',
     seller: 'Youssef',
     price: '30 TND',
     priceValue: 30
@@ -37,7 +37,7 @@ const initialMarketplaceItems = [
     id: 'm4',
     name: 'Denim Mini Skirt',
     condition: 'Excellent',
-    image: 'https://loremflickr.com/800/800/denim,skirt?lock=24',
+    image: 'https://source.unsplash.com/800x800/?denim,skirt&sig=14',
     seller: 'Meryem',
     price: '40 TND',
     priceValue: 40
@@ -64,7 +64,7 @@ const Marketplace = () => {
     name: '',
     price: '',
     condition: 'Good',
-    image: 'https://loremflickr.com/800/800/denim,clothing?lock=25',
+    image: 'https://source.unsplash.com/800x800/?jeans,denim&sig=15',
     imageFile: null,
     imagePreview: null
   });
@@ -104,7 +104,7 @@ const Marketplace = () => {
       setShowSellForm(false);
       setNewItem({
         name: '', price: '', condition: 'Good',
-        image: 'https://loremflickr.com/800/800/denim,clothing?lock=25',
+        image: 'https://source.unsplash.com/800x800/?jeans,denim&sig=15',
         imageFile: null, imagePreview: null
       });
     } catch (error) {

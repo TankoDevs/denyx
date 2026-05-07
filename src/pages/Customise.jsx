@@ -7,19 +7,19 @@ const customOptions = [
     id: 'jeans',
     title: 'Bespoke Jeans',
     description: 'Custom-fitted upcycled denim jeans tailored precisely to your measurements and style preferences.',
-    image: 'https://loremflickr.com/1200/800/denim,tailor?lock=31'
+    image: 'https://source.unsplash.com/1200x800/?jeans,tailor&sig=31'
   },
   {
     id: 'wallet-bag',
     title: 'Denim Wallet Bag',
     description: 'A unique, handcrafted wallet bag made from high-quality denim offcuts. Sustainable and stylish.',
-    image: 'https://loremflickr.com/1200/800/denim,bag?lock=32'
+    image: 'https://source.unsplash.com/1200x800/?denim,bag&sig=32'
   },
   {
     id: 'hand-bag',
     title: 'Signature Tote',
     description: 'Spacious and durable signature tote bag, upcycled from vintage denim for a timeless look.',
-    image: 'https://loremflickr.com/1200/800/denim,tote?lock=33'
+    image: 'https://source.unsplash.com/1200x800/?denim,tote&sig=33'
   }
 ];
 
