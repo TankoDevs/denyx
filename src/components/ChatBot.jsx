@@ -48,7 +48,11 @@ const ChatBot = () => {
       body: formData,
     });
     
-    if (!response.ok) throw new Error('Cloudinary upload failed');
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('Cloudinary Error Detail:', errorData);
+      throw new Error(errorData.error?.message || 'Cloudinary upload failed');
+    }
     const data = await response.json();
     return data.secure_url;
   };
