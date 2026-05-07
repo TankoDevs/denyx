@@ -197,6 +197,58 @@
   color: #e74c3c;
 }
 
+/* ── Colorful result bubble ─── */
+.chat-bubble.result {
+  background: linear-gradient(135deg, rgba(130,80,255,0.15), rgba(255,120,80,0.12), rgba(40,180,130,0.12));
+  border: 1.5px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+
+.chat-bubble.result::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(135deg, #8250ff, #ff7850, #28b482);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.chat-bubble.result p {
+  padding: 0.6rem 0.85rem 0.85rem;
+  background: linear-gradient(135deg, #c084fc, #fb923c, #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 600;
+}
+
+.bubble-image-link {
+  display: block;
+  position: relative;
+}
+
+.bubble-image-link:hover .bubble-image {
+  opacity: 0.85;
+}
+
+.result-badge {
+  display: block;
+  text-align: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.4rem;
+  background: linear-gradient(90deg, #8250ff, #ff7850, #28b482);
+  color: white;
+  letter-spacing: 0.5px;
+}
+
 .bubble-image {
   width: 100%;
   max-width: 220px;

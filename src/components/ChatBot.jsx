@@ -50,15 +50,19 @@ const ChatBot = () => {
     setMessages([{ id: 1, text: "Hello! 👋 I'm your DENYX AI stylist. Upload a photo and describe your customisation idea.", received: true }]);
   };
 
-  // Extract a useful URL from various webhook response shapes
+  // Extract a useful result URL from various webhook response shapes
   const extractResultUrl = (data) => {
     if (!data) return null;
-    // Common n8n output fields
     const candidates = [
-      data?.image_url, data?.imageUrl, data?.output_url, data?.outputUrl,
-      data?.result_url, data?.resultUrl, data?.url, data?.secure_url,
-      data?.data?.image_url, data?.data?.url,
-      data?.[0]?.image_url, data?.[0]?.url, data?.[0]?.output_url
+      // Direct fields
+      data?.result_url, data?.resultUrl, data?.output_url, data?.outputUrl,
+      data?.image_url, data?.imageUrl, data?.url, data?.secure_url,
+      // n8n nested under data or body
+      data?.data?.image_url, data?.data?.url, data?.data?.result_url,
+      data?.body?.result_url, data?.body?.output_url,
+      // Array shapes
+      data?.[0]?.image_url, data?.[0]?.url, data?.[0]?.output_url,
+      data?.[0]?.data?.image_url
     ];
     return candidates.find(c => typeof c === 'string' && c.startsWith('http')) || null;
   };
@@ -89,8 +93,9 @@ const ChatBot = () => {
     setImage(null);
     setImagePreview(null);
 
-    // Add user message to chat
-    const userMsg = { id: Date.now(), text: currentMessage, image: currentPreview, received: false };
+    // Add user message to chat (shows local base64 preview first)
+    const userMsgId = Date.now();
+    const userMsg = { id: userMsgId, text: currentMessage, image: currentPreview, received: false };
     setMessages(prev => [...prev, userMsg]);
 
     try {
@@ -100,6 +105,10 @@ const ChatBot = () => {
         setStatusText('Uploading image...');
         inputImageUrl = await uploadImage(currentImageFile);
         console.log('✅ Cloudinary input URL:', inputImageUrl);
+        // Update user message to use the permanent Cloudinary URL
+        setMessages(prev => prev.map(m =>
+          m.id === userMsgId ? { ...m, image: inputImageUrl } : m
+        ));
       }
 
       // ── Step 2: POST to webhook and WAIT for full response ───────────
@@ -140,18 +149,35 @@ const ChatBot = () => {
         }
       }
 
-      // ── Step 5: Add bot reply to chat ────────────────────────────────
+      // ── Step 5: Add bot reply to chat with colorful style ───────────
       if (finalImageUrl || textReply) {
         const botMsg = {
           id: Date.now() + 1,
-          text: textReply || (finalImageUrl ? 'Here is your customised design! ✨' : null),
+          text: textReply || '✨ Your customised design is ready!',
           image: finalImageUrl,
-          received: true
+          received: true,
+          isResult: !!finalImageUrl  // flag for special colorful styling
         };
-        setMessages(prev => [...prev, botMsg]);
-      } else {
-        // Got some response but nothing useful — stay silent (don't show boilerplate)
-        console.log('No meaningful content in webhook response, not adding bot message.');
+        setMessages(prev => {
+          const updated = [...prev, botMsg];
+          // Persist to localStorage immediately
+          localStorage.setItem('denyx_chat_messages', JSON.stringify(updated));
+          return updated;
+        });
+      } else if (inputImageUrl) {
+        // n8n confirmed it received the image — show the uploaded image back
+        const confirmMsg = {
+          id: Date.now() + 1,
+          text: '✅ Image uploaded & sent to our AI! Your styled result will appear here once ready.',
+          image: inputImageUrl,
+          received: true,
+          isResult: false
+        };
+        setMessages(prev => {
+          const updated = [...prev, confirmMsg];
+          localStorage.setItem('denyx_chat_messages', JSON.stringify(updated));
+          return updated;
+        });
       }
 
     } catch (error) {
@@ -204,9 +230,12 @@ const ChatBot = () => {
                 {msg.received && (
                   <div className="bot-avatar-small"><Wand2 size={12} /></div>
                 )}
-                <div className={`chat-bubble ${msg.received ? 'bot' : 'user'} ${msg.isError ? 'error' : ''}`}>
+                <div className={`chat-bubble ${msg.received ? 'bot' : 'user'} ${msg.isError ? 'error' : ''} ${msg.isResult ? 'result' : ''}`}>
                   {msg.image && (
-                    <img src={msg.image} alt="content" className="bubble-image" />
+                    <a href={msg.image} target="_blank" rel="noopener noreferrer" className="bubble-image-link">
+                      <img src={msg.image} alt="content" className="bubble-image" />
+                      {msg.isResult && <span className="result-badge">✨ View Full Size</span>}
+                    </a>
                   )}
                   {msg.text && <p>{msg.text}</p>}
                 </div>
