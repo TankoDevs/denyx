@@ -12,8 +12,8 @@ const initialMarketplaceItems = [
     condition: 'Excellent',
     image: 'https://loremflickr.com/800/800/vintage,jeans?lock=21',
     seller: 'Amine',
-    price: '40 TND',
-    priceValue: 40
+    price: '25 TND',
+    priceValue: 25
   },
   {
     id: 'm2',
@@ -21,8 +21,8 @@ const initialMarketplaceItems = [
     condition: 'Like New',
     image: 'https://loremflickr.com/800/800/denim,jacket?lock=22',
     seller: 'Sarra',
-    price: '120 TND',
-    priceValue: 120
+    price: '50 TND',
+    priceValue: 50
   },
   {
     id: 'm3',
@@ -30,8 +30,8 @@ const initialMarketplaceItems = [
     condition: 'Good',
     image: 'https://loremflickr.com/800/800/denim,shorts?lock=23',
     seller: 'Youssef',
-    price: '45 TND',
-    priceValue: 45
+    price: '30 TND',
+    priceValue: 30
   },
   {
     id: 'm4',
@@ -39,8 +39,8 @@ const initialMarketplaceItems = [
     condition: 'Excellent',
     image: 'https://loremflickr.com/800/800/denim,skirt?lock=24',
     seller: 'Meryem',
-    price: '65 TND',
-    priceValue: 65
+    price: '40 TND',
+    priceValue: 40
   }
 ];
 

@@ -9,48 +9,48 @@ const shopProducts = [
     id: 'p1',
     name: 'Vintage Straight Leg',
     category: 'Jeans',
-    price: '185 TND',
-    priceValue: 185,
+    price: '45 TND',
+    priceValue: 45,
     image: 'https://loremflickr.com/800/800/denim,fashion?lock=11'
   },
   {
     id: 'p2',
     name: 'Classic Indigo Jacket',
     category: 'Jackets',
-    price: '220 TND',
-    priceValue: 220,
+    price: '50 TND',
+    priceValue: 50,
     image: 'https://loremflickr.com/800/800/denim,jacket?lock=12'
   },
   {
     id: 'p3',
     name: 'Faded Slim Fit',
     category: 'Jeans',
-    price: '160 TND',
-    priceValue: 160,
+    price: '35 TND',
+    priceValue: 35,
     image: 'https://loremflickr.com/800/800/denim,jeans?lock=13'
   },
   {
     id: 'p4',
     name: 'Distressed Denim',
     category: 'Jeans',
-    price: '175 TND',
-    priceValue: 175,
+    price: '40 TND',
+    priceValue: 40,
     image: 'https://loremflickr.com/800/800/vintage,denim?lock=14'
   },
   {
     id: 'p5',
     name: 'Upcycled Patchwork',
     category: 'Jeans',
-    price: '240 TND',
-    priceValue: 240,
+    price: '48 TND',
+    priceValue: 48,
     image: 'https://loremflickr.com/800/800/denim,patchwork?lock=15'
   },
   {
     id: 'p6',
     name: 'Denim Overshirt',
     category: 'Jackets',
-    price: '190 TND',
-    priceValue: 190,
+    price: '42 TND',
+    priceValue: 42,
     image: 'https://loremflickr.com/800/800/denim,shirt?lock=16'
   }
 ];
