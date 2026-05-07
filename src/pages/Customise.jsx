@@ -7,7 +7,7 @@ const customOptions = [
     id: 'jeans',
     title: 'Bespoke Jeans',
     description: 'Custom-fitted upcycled denim jeans tailored precisely to your measurements and style preferences.',
-    image: 'https://images.unsplash.com/photo-1542272604-78021b369c73?w=1200&auto=format&fit=crop'
+    image: '/bespoke-jeans.jpg'
   },
   {
     id: 'wallet-bag',

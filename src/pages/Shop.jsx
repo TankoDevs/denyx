@@ -11,7 +11,7 @@ const shopProducts = [
     category: 'Jeans',
     price: '45 TND',
     priceValue: 45,
-    image: 'https://images.unsplash.com/photo-1604176354204-9268737828e4?w=800&auto=format&fit=crop'
+    image: '/straight-leg.jpg'
   },
   {
     id: 'p2',
@@ -27,7 +27,7 @@ const shopProducts = [
     category: 'Jeans',
     price: '35 TND',
     priceValue: 35,
-    image: 'https://images.unsplash.com/photo-1542272604-78021b369c73?w=800&auto=format&fit=crop'
+    image: '/faded-slim.jpg'
   },
   {
     id: 'p4',
@@ -35,7 +35,7 @@ const shopProducts = [
     category: 'Jeans',
     price: '40 TND',
     priceValue: 40,
-    image: 'https://images.unsplash.com/photo-1475178626620-a4d074967452?w=800&auto=format&fit=crop'
+    image: '/distressed-denim.png'
   },
   {
     id: 'p5',
@@ -51,7 +51,7 @@ const shopProducts = [
     category: 'Jackets',
     price: '42 TND',
     priceValue: 42,
-    image: 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=800&auto=format&fit=crop'
+    image: '/denim-overshirt.jpg'
   }
 ];
 
