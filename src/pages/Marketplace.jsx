@@ -12,8 +12,8 @@ const initialMarketplaceItems = [
     condition: 'Excellent',
     image: 'https://images.unsplash.com/photo-1542272604-78021b369c73?q=80&w=800&auto=format&fit=crop',
     seller: 'Amine',
-    price: '95 TND',
-    priceValue: 95
+    price: '40 TND',
+    priceValue: 40
   },
   {
     id: 'm2',
@@ -49,7 +49,7 @@ const Marketplace = () => {
     const savedItems = localStorage.getItem('denyx_marketplace_items');
     return savedItems ? JSON.parse(savedItems) : initialMarketplaceItems;
   });
-  
+
   const [showSellForm, setShowSellForm] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
   const { addToCart } = useCart();
@@ -99,13 +99,13 @@ const Marketplace = () => {
         price: `${newItem.price} TND`,
         priceValue: parseInt(newItem.price)
       };
-      
+
       setItems([itemToAdd, ...items]);
       setShowSellForm(false);
-      setNewItem({ 
-        name: '', price: '', condition: 'Good', 
+      setNewItem({
+        name: '', price: '', condition: 'Good',
         image: 'https://images.unsplash.com/photo-1582552938357-32b906df40cb?q=80&w=800&auto=format&fit=crop',
-        imageFile: null, imagePreview: null 
+        imageFile: null, imagePreview: null
       });
     } catch (error) {
       alert('Failed to upload image. Please check your Cloudinary settings.');
@@ -135,29 +135,29 @@ const Marketplace = () => {
               <div className="form-grid">
                 <div className="form-group">
                   <label>Item Name</label>
-                  <input 
-                    type="text" 
-                    placeholder="e.g. Vintage 90s Jeans" 
+                  <input
+                    type="text"
+                    placeholder="e.g. Vintage 90s Jeans"
                     value={newItem.name}
-                    onChange={(e) => setNewItem({...newItem, name: e.target.value})}
-                    required 
+                    onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
+                    required
                   />
                 </div>
                 <div className="form-group">
                   <label>Price (TND)</label>
-                  <input 
-                    type="number" 
-                    placeholder="75" 
+                  <input
+                    type="number"
+                    placeholder="75"
                     value={newItem.price}
-                    onChange={(e) => setNewItem({...newItem, price: e.target.value})}
-                    required 
+                    onChange={(e) => setNewItem({ ...newItem, price: e.target.value })}
+                    required
                   />
                 </div>
                 <div className="form-group">
                   <label>Condition</label>
-                  <select 
+                  <select
                     value={newItem.condition}
-                    onChange={(e) => setNewItem({...newItem, condition: e.target.value})}
+                    onChange={(e) => setNewItem({ ...newItem, condition: e.target.value })}
                   >
                     <option value="Like New">Like New</option>
                     <option value="Excellent">Excellent</option>
@@ -167,8 +167,8 @@ const Marketplace = () => {
                 </div>
                 <div className="form-group">
                   <label>Upload Photo</label>
-                  <div 
-                    className="photo-upload-placeholder" 
+                  <div
+                    className="photo-upload-placeholder"
                     onClick={() => fileInputRef.current.click()}
                     style={{ cursor: 'pointer', overflow: 'hidden', position: 'relative' }}
                   >
@@ -181,12 +181,12 @@ const Marketplace = () => {
                       </>
                     )}
                   </div>
-                  <input 
-                    type="file" 
-                    ref={fileInputRef} 
-                    onChange={handleImageSelect} 
-                    accept="image/*" 
-                    style={{ display: 'none' }} 
+                  <input
+                    type="file"
+                    ref={fileInputRef}
+                    onChange={handleImageSelect}
+                    accept="image/*"
+                    style={{ display: 'none' }}
                   />
                 </div>
               </div>
@@ -205,10 +205,10 @@ const Marketplace = () => {
             <ModernListItem key={item.id} variant="product">
               <div className="modern-product-image-wrapper">
                 <img src={item.image} alt={item.name} className="modern-product-image" />
-                <span className="condition-badge" style={{ 
-                  position: 'absolute', top: '10px', right: '10px', 
-                  padding: '4px 10px', borderRadius: '8px', 
-                  background: 'rgba(27, 58, 104, 0.8)', color: 'white', fontSize: '0.7rem' 
+                <span className="condition-badge" style={{
+                  position: 'absolute', top: '10px', right: '10px',
+                  padding: '4px 10px', borderRadius: '8px',
+                  background: 'rgba(27, 58, 104, 0.8)', color: 'white', fontSize: '0.7rem'
                 }}>
                   {item.condition}
                 </span>
