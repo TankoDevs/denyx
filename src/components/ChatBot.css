@@ -185,12 +185,25 @@
   flex: 1;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 9999px;
+  border-radius: 20px;
   padding: 0.75rem 1rem;
   color: white;
   font-family: var(--font-body);
   outline: none;
   transition: var(--transition-smooth);
+  resize: none;
+  max-height: 120px;
+  overflow-y: auto;
+  line-height: 1.4;
+}
+
+.chatbot-input::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chatbot-input::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
 }
 
 .chatbot-input:focus {

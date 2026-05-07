@@ -130,14 +130,19 @@ const ChatBot = () => {
                 accept="image/*" 
                 style={{ display: 'none' }} 
               />
-              <input 
-                type="text" 
-                placeholder="Type a message..." 
+              <textarea 
+                placeholder="Describe your design or ask a question..." 
                 className="chatbot-input" 
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleSend(e)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    handleSend(e);
+                  }
+                }}
                 disabled={isSending}
+                rows="1"
               />
               <button 
                 className="chatbot-send-btn" 
