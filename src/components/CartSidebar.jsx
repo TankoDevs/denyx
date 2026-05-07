@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Minus, Plus, ShoppingBag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
+import { ModernList, ModernListItem, EmptyState } from './ui/ModernList';
 import './CartSidebar.css';
 
 const CartSidebar = () => {
@@ -32,9 +33,11 @@ const CartSidebar = () => {
 
         <div className="cart-content">
           {cartItems.length === 0 ? (
-            <div className="cart-empty">
-              <ShoppingBag size={48} />
-              <p>Your cart is empty.</p>
+            <EmptyState 
+              icon={ShoppingBag} 
+              title="Your cart is empty" 
+              message="Looks like you haven't added anything to your cart yet."
+            >
               <button 
                 className="btn btn-primary" 
                 onClick={() => setIsCartOpen(false)}
@@ -42,17 +45,19 @@ const CartSidebar = () => {
               >
                 Continue Shopping
               </button>
-            </div>
+            </EmptyState>
           ) : (
-            <div className="cart-items">
+            <ModernList className="cart-items">
               {cartItems.map((item) => (
-                <div key={item.id} className="cart-item">
-                  <img src={item.image} alt={item.name} className="cart-item-img" />
-                  <div className="cart-item-details">
-                    <h4>{item.name}</h4>
-                    <p className="cart-item-price">{item.price}</p>
+                <ModernListItem key={item.id} variant="cart">
+                  <img src={item.image} alt={item.name} className="modern-cart-img" />
+                  <div className="modern-cart-details">
+                    <div className="modern-cart-header">
+                      <h4 style={{ margin: 0, fontSize: '1rem' }}>{item.name}</h4>
+                      <p className="cart-item-price" style={{ margin: 0, fontWeight: 700 }}>{item.price}</p>
+                    </div>
                     
-                    <div className="cart-item-actions">
+                    <div className="modern-cart-actions">
                       <div className="quantity-controls">
                         <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>
                           <Minus size={14} />
@@ -65,14 +70,15 @@ const CartSidebar = () => {
                       <button 
                         className="cart-item-remove"
                         onClick={() => removeFromCart(item.id)}
+                        style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', background: 'none', border: 'none', cursor: 'pointer' }}
                       >
                         Remove
                       </button>
                     </div>
                   </div>
-                </div>
+                </ModernListItem>
               ))}
-            </div>
+            </ModernList>
           )}
         </div>
 

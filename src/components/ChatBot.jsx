@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Sparkles, X, Send, ImagePlus, Loader2, Wand2, Trash2 } from 'lucide-react';
+import { Sparkles, X, Send, ImagePlus, Loader2, Wand2, Trash2, Download } from 'lucide-react';
 import { uploadImage } from '../utils/cloudinary';
 import './ChatBot.css';
 
@@ -194,6 +194,25 @@ const ChatBot = () => {
     }
   };
 
+  const handleDownload = async (imageUrl, filename) => {
+    try {
+      const response = await fetch(imageUrl);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = filename || 'denyx-design.jpg';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      console.error('Download failed:', error);
+      // Fallback: open in new tab
+      window.open(imageUrl, '_blank');
+    }
+  };
+
   return (
     <div className="chatbot-container">
       {isOpen && (
@@ -232,10 +251,23 @@ const ChatBot = () => {
                 )}
                 <div className={`chat-bubble ${msg.received ? 'bot' : 'user'} ${msg.isError ? 'error' : ''} ${msg.isResult ? 'result' : ''}`}>
                   {msg.image && (
-                    <a href={msg.image} target="_blank" rel="noopener noreferrer" className="bubble-image-link">
-                      <img src={msg.image} alt="content" className="bubble-image" />
-                      {msg.isResult && <span className="result-badge">✨ View Full Size</span>}
-                    </a>
+                    <div className="bubble-image-wrapper">
+                      <a href={msg.image} target="_blank" rel="noopener noreferrer" className="bubble-image-link">
+                        <img src={msg.image} alt="content" className="bubble-image" />
+                        {msg.isResult && <span className="result-overlay-badge">✨ View Full</span>}
+                      </a>
+                      <button
+                        className={`download-btn ${msg.isResult ? 'download-result' : ''}`}
+                        title="Download image"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleDownload(msg.image, msg.isResult ? `denyx-design-${msg.id}.jpg` : `denyx-image-${msg.id}.jpg`);
+                        }}
+                      >
+                        <Download size={14} />
+                        {msg.isResult ? 'Download Design' : 'Save Image'}
+                      </button>
+                    </div>
                   )}
                   {msg.text && <p>{msg.text}</p>}
                 </div>

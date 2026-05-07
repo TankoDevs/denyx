@@ -5,21 +5,21 @@ import './Customise.css';
 const customOptions = [
   {
     id: 'jeans',
-    title: 'Jeans',
-    description: 'Custom fit upcycled denim jeans.',
-    image: 'https://images.unsplash.com/photo-1542272604-78021b369c73?q=80&w=600&auto=format&fit=crop'
+    title: 'Bespoke Jeans',
+    description: 'Custom-fitted upcycled denim jeans tailored precisely to your measurements and style preferences.',
+    image: 'https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1200&auto=format&fit=crop'
   },
   {
     id: 'wallet-bag',
-    title: 'Jeans Wallet Bag',
-    description: 'Unique wallet bag crafted from denim scraps.',
-    image: 'https://images.unsplash.com/photo-1544816153-199d88248314?q=80&w=600&auto=format&fit=crop'
+    title: 'Denim Wallet Bag',
+    description: 'A unique, handcrafted wallet bag made from high-quality denim offcuts. Sustainable and stylish.',
+    image: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=1200&auto=format&fit=crop'
   },
   {
     id: 'hand-bag',
-    title: 'Hand Bag',
-    description: 'Spacious and durable upcycled denim hand bag.',
-    image: 'https://images.unsplash.com/photo-1584917469897-47469b7819b0?q=80&w=600&auto=format&fit=crop'
+    title: 'Signature Tote',
+    description: 'Spacious and durable signature tote bag, upcycled from vintage denim for a timeless look.',
+    image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?q=80&w=1200&auto=format&fit=crop'
   }
 ];
 
@@ -33,25 +33,31 @@ const Customise = () => {
   return (
     <div className="customise-page">
       <div className="container">
-        <div className="customise-header text-center">
-          <h1>Customise Your Piece</h1>
-          <p>Choose an item to start your customisation journey with our expert tailors.</p>
+        <div className="customise-header text-center animate-fade-in-up">
+          <span className="section-badge">Bespoke Design</span>
+          <h1 className="section-title">Customise Your <span className="text-gradient">Piece</span></h1>
+          <p className="section-subtitle">Choose an item to start your customisation journey with our expert tailors across Tunisia.</p>
         </div>
 
         <div className="options-grid">
           {customOptions.map((option) => (
             <div 
               key={option.id} 
-              className="option-card glass-panel animate-fade-in-up"
+              className="custom-option-card glass-panel animate-fade-in-up"
               onClick={() => handleSelect(option.id)}
             >
-              <div className="option-image">
+              <div className="card-image-wrapper">
                 <img src={option.image} alt={option.title} />
+                <div className="card-overlay">
+                  <span className="overlay-text">Select Design</span>
+                </div>
               </div>
-              <div className="option-info">
+              <div className="card-content">
                 <h3>{option.title}</h3>
                 <p>{option.description}</p>
-                <button className="btn btn-primary">Select Item</button>
+                <div className="card-footer">
+                  <button className="btn-premium w-100">Get Started</button>
+                </div>
               </div>
             </div>
           ))}

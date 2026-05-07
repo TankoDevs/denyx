@@ -1,5 +1,6 @@
 import React from 'react';
 import { Recycle, Droplet, Leaf, ShieldCheck } from 'lucide-react';
+import { ModernList, ModernListItem } from './ui/ModernList';
 import './Features.css';
 
 const featuresData = [
@@ -34,21 +35,28 @@ const Features = () => {
     <section id="features" className="section features">
       <div className="container">
         <div className="features-header text-center">
-          <h2 className="section-title">The DENYX Standard</h2>
+          <h2 className="section-title">The <span className="text-gradient">DENYX</span> Standard</h2>
           <p className="section-subtitle">Why our sustainable approach doesn't compromise on quality or style.</p>
         </div>
         
-        <div className="features-grid">
+        <ModernList layout="grid">
           {featuresData.map((feature) => (
-            <div key={feature.id} className="feature-card glass-panel">
-              <div className="feature-icon">
+            <ModernListItem key={feature.id} variant="content" className="feature-card">
+              <div className="feature-icon" style={{ 
+                width: '64px', height: '64px', borderRadius: '16px', 
+                background: 'rgba(209, 189, 164, 0.1)', display: 'flex', 
+                alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem',
+                color: 'var(--color-accent-beige)'
+              }}>
                 {feature.icon}
               </div>
-              <h3 className="feature-title">{feature.title}</h3>
-              <p className="feature-description">{feature.description}</p>
-            </div>
+              <h3 className="feature-title" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>{feature.title}</h3>
+              <p className="feature-description" style={{ color: 'var(--color-text-muted)', lineHeight: '1.7' }}>
+                {feature.description}
+              </p>
+            </ModernListItem>
           ))}
-        </div>
+        </ModernList>
       </div>
     </section>
   );
