@@ -11,7 +11,7 @@ const shopProducts = [
     category: 'Jeans',
     price: '45 TND',
     priceValue: 45,
-    image: 'https://source.unsplash.com/800x800/?denim,jeans&sig=1'
+    image: 'https://images.unsplash.com/photo-1604176354204-9268737828e4?w=800&auto=format&fit=crop'
   },
   {
     id: 'p2',
@@ -19,7 +19,7 @@ const shopProducts = [
     category: 'Jackets',
     price: '50 TND',
     priceValue: 50,
-    image: 'https://source.unsplash.com/800x800/?denim,jacket&sig=2'
+    image: 'https://images.unsplash.com/photo-1551537482-f2075a1d41f2?w=800&auto=format&fit=crop'
   },
   {
     id: 'p3',
@@ -27,7 +27,7 @@ const shopProducts = [
     category: 'Jeans',
     price: '35 TND',
     priceValue: 35,
-    image: 'https://source.unsplash.com/800x800/?jeans,slim&sig=3'
+    image: 'https://images.unsplash.com/photo-1542272604-78021b369c73?w=800&auto=format&fit=crop'
   },
   {
     id: 'p4',
@@ -35,7 +35,7 @@ const shopProducts = [
     category: 'Jeans',
     price: '40 TND',
     priceValue: 40,
-    image: 'https://source.unsplash.com/800x800/?vintage,denim&sig=4'
+    image: 'https://images.unsplash.com/photo-1475178626620-a4d074967452?w=800&auto=format&fit=crop'
   },
   {
     id: 'p5',
@@ -43,7 +43,7 @@ const shopProducts = [
     category: 'Jeans',
     price: '48 TND',
     priceValue: 48,
-    image: 'https://source.unsplash.com/800x800/?jeans,fashion&sig=5'
+    image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&auto=format&fit=crop'
   },
   {
     id: 'p6',
@@ -51,7 +51,7 @@ const shopProducts = [
     category: 'Jackets',
     price: '42 TND',
     priceValue: 42,
-    image: 'https://source.unsplash.com/800x800/?denim,shirt&sig=6'
+    image: 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=800&auto=format&fit=crop'
   }
 ];
 

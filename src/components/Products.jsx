@@ -8,28 +8,28 @@ const productsData = [
     name: 'The Essential Tote',
     category: 'Bags',
     price: '50 TND',
-    image: 'https://source.unsplash.com/800x800/?denim,tote,bag&sig=21'
+    image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=800&auto=format&fit=crop'
   },
   {
     id: 2,
     name: 'Everyday Crossbody',
     category: 'Accessories',
     price: '45 TND',
-    image: 'https://source.unsplash.com/800x800/?denim,crossbody,bag&sig=22'
+    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=800&auto=format&fit=crop'
   },
   {
     id: 3,
     name: 'Tech Sleeve Pro',
     category: 'Tech Accessories',
     price: '35 TND',
-    image: 'https://source.unsplash.com/800x800/?denim,sleeve&sig=23'
+    image: 'https://images.unsplash.com/photo-1598033129183-c4f50c736f10?w=800&auto=format&fit=crop'
   },
   {
     id: 4,
     name: 'Minimalist Pouch',
     category: 'Accessories',
     price: '25 TND',
-    image: 'https://source.unsplash.com/800x800/?denim,pouch&sig=24'
+    image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&auto=format&fit=crop'
   }
 ];
 

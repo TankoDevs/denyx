@@ -10,7 +10,7 @@ const initialMarketplaceItems = [
     id: 'm1',
     name: 'Vintage 501 Levi\'s',
     condition: 'Excellent',
-    image: 'https://source.unsplash.com/800x800/?vintage,501,jeans&sig=11',
+    image: 'https://images.unsplash.com/photo-1604176354204-9268737828e4?w=800&auto=format&fit=crop',
     seller: 'Amine',
     price: '25 TND',
     priceValue: 25
@@ -19,7 +19,7 @@ const initialMarketplaceItems = [
     id: 'm2',
     name: 'Denim Trucker Jacket',
     condition: 'Like New',
-    image: 'https://source.unsplash.com/800x800/?denim,trucker,jacket&sig=12',
+    image: 'https://images.unsplash.com/photo-1551537482-f2075a1d41f2?w=800&auto=format&fit=crop',
     seller: 'Sarra',
     price: '50 TND',
     priceValue: 50
@@ -28,7 +28,7 @@ const initialMarketplaceItems = [
     id: 'm3',
     name: 'High-Waisted Shorts',
     condition: 'Good',
-    image: 'https://source.unsplash.com/800x800/?denim,shorts&sig=13',
+    image: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=800&auto=format&fit=crop',
     seller: 'Youssef',
     price: '30 TND',
     priceValue: 30
@@ -37,7 +37,7 @@ const initialMarketplaceItems = [
     id: 'm4',
     name: 'Denim Mini Skirt',
     condition: 'Excellent',
-    image: 'https://source.unsplash.com/800x800/?denim,skirt&sig=14',
+    image: 'https://images.unsplash.com/photo-1475178626620-a4d074967452?w=800&auto=format&fit=crop',
     seller: 'Meryem',
     price: '40 TND',
     priceValue: 40
@@ -64,7 +64,7 @@ const Marketplace = () => {
     name: '',
     price: '',
     condition: 'Good',
-    image: 'https://source.unsplash.com/800x800/?jeans,denim&sig=15',
+    image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&auto=format&fit=crop',
     imageFile: null,
     imagePreview: null
   });
@@ -104,7 +104,7 @@ const Marketplace = () => {
       setShowSellForm(false);
       setNewItem({
         name: '', price: '', condition: 'Good',
-        image: 'https://source.unsplash.com/800x800/?jeans,denim&sig=15',
+        image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&auto=format&fit=crop',
         imageFile: null, imagePreview: null
       });
     } catch (error) {
