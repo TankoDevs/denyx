@@ -1,10 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { MessageCircle, X, Send, Image as ImageIcon, Loader2 } from 'lucide-react';
 import './ChatBot.css';
 
-const WEBHOOK_URL = 'https://amine.workifly.tn/webhook/652979f0-54e2-4535-b502-95630179f0f6';
-const CLOUDINARY_CLOUD_NAME = 'dg3v9qjs3'; // Placeholder - replace with your cloud name
-const CLOUDINARY_UPLOAD_PRESET = 'denyx_preset'; // Placeholder - replace with your preset
+const WEBHOOK_URL = import.meta.env.VITE_WEBHOOK_URL;
+const CLOUDINARY_CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME;
+const CLOUDINARY_UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET;
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,9 +12,17 @@ const ChatBot = () => {
   const [image, setImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
   const [isSending, setIsSending] = useState(false);
-  const [messages, setMessages] = useState([
-    { id: 1, text: "Hi there! 👋 How can I help you with your sustainable denim journey today?", received: true }
-  ]);
+  
+  const [messages, setMessages] = useState(() => {
+    const savedMessages = localStorage.getItem('denyx_chat_messages');
+    return savedMessages ? JSON.parse(savedMessages) : [
+      { id: 1, text: "Hi there! 👋 How can I help you with your sustainable denim journey today?", received: true }
+    ];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('denyx_chat_messages', JSON.stringify(messages));
+  }, [messages]);
   
   const fileInputRef = useRef(null);
 

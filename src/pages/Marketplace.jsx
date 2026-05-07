@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useCart } from '../context/CartContext';
 import { Plus, ShoppingBag, Camera } from 'lucide-react';
 import './Marketplace.css';
@@ -25,9 +25,17 @@ const initialMarketplaceItems = [
 ];
 
 const Marketplace = () => {
-  const [items, setItems] = useState(initialMarketplaceItems);
+  const [items, setItems] = useState(() => {
+    const savedItems = localStorage.getItem('denyx_marketplace_items');
+    return savedItems ? JSON.parse(savedItems) : initialMarketplaceItems;
+  });
+  
   const [showSellForm, setShowSellForm] = useState(false);
   const { addToCart } = useCart();
+
+  useEffect(() => {
+    localStorage.setItem('denyx_marketplace_items', JSON.stringify(items));
+  }, [items]);
 
   // Form State
   const [newItem, setNewItem] = useState({
@@ -41,7 +49,7 @@ const Marketplace = () => {
     e.preventDefault();
     const itemToAdd = {
       ...newItem,
-      id: 'm' + (items.length + 1),
+      id: 'm' + Date.now(),
       seller: 'Me',
       price: `${newItem.price} TND`,
       priceValue: parseInt(newItem.price)
