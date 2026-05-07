@@ -19,7 +19,7 @@ const customOptions = [
     id: 'hand-bag',
     title: 'Signature Tote',
     description: 'Spacious and durable signature tote bag, upcycled from vintage denim for a timeless look.',
-    image: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?w=1200&auto=format&fit=crop'
+    image: '/signature-tote.jpg'
   }
 ];
 
