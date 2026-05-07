@@ -13,7 +13,7 @@ const customOptions = [
     id: 'wallet-bag',
     title: 'Denim Wallet Bag',
     description: 'A unique, handcrafted wallet bag made from high-quality denim offcuts. Sustainable and stylish.',
-    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=1200&auto=format&fit=crop'
+    image: '/denim-wallet.jpg'
   },
   {
     id: 'hand-bag',
