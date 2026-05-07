@@ -42,31 +42,60 @@ const ChatBot = () => {
     if ((!message.trim() && !image) || isSending) return;
 
     setIsSending(true);
-    const userMessage = { id: Date.now(), text: message, image: imagePreview, received: false };
-    setMessages([...messages, userMessage]);
+
+    // Save current values before clearing
+    const currentMessage = message;
+    const currentImageFile = image;        // keep the File object
+    const currentPreview = imagePreview;   // keep the base64 preview
+
+    // Show user message immediately in the chat
+    const userMsg = { id: Date.now(), text: currentMessage, image: currentPreview, received: false };
+    setMessages(prev => [...prev, userMsg]);
+
+    // Clear the input fields right away
+    setMessage('');
+    setImage(null);
+    setImagePreview(null);
 
     try {
+      // Step 1: Upload image to Cloudinary → receive secure URL
       let imageUrl = '';
-      if (image) {
-        imageUrl = await uploadImage(image);
+      if (currentImageFile) {
+        console.log('Uploading image to Cloudinary...');
+        imageUrl = await uploadImage(currentImageFile);
+        console.log('✅ Cloudinary URL:', imageUrl);
       }
 
-      // Send to webhook
-      await fetch(WEBHOOK_URL, {
+      // Step 2: Send image_url + prompt to the webhook
+      const payload = { image_url: imageUrl, prompt: currentMessage };
+      console.log('📤 Calling webhook:', WEBHOOK_URL, payload);
+
+      const webhookResponse = await fetch(WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          image_url: imageUrl,
-          prompt: message
-        }),
+        body: JSON.stringify(payload),
       });
 
-      setMessage('');
-      setImage(null);
-      setImagePreview(null);
+      // Step 3: Show the webhook response as a bot reply (if any)
+      let botReply = 'Message received! ✅ Our team will get back to you.';
+      if (webhookResponse.ok) {
+        try {
+          const responseData = await webhookResponse.json();
+          if (responseData?.output || responseData?.message || responseData?.reply) {
+            botReply = responseData.output || responseData.message || responseData.reply;
+          }
+        } catch {
+          // Response may not be JSON, that's fine
+        }
+      }
+
+      const botMsg = { id: Date.now() + 1, text: botReply, received: true };
+      setMessages(prev => [...prev, botMsg]);
+
     } catch (error) {
       console.error('Error sending message:', error);
-      alert('Failed to send message. Please check Cloudinary settings.');
+      const errMsg = { id: Date.now() + 1, text: `Error: ${error.message}`, received: true };
+      setMessages(prev => [...prev, errMsg]);
     } finally {
       setIsSending(false);
     }
