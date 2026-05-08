@@ -43,7 +43,7 @@
 }
 
 .hero-content {
-  max-width: 800px;
+  max-width: 50rem;
 }
 
 .hero-badge {
@@ -75,7 +75,7 @@
 .hero-subtitle {
   font-size: clamp(1.125rem, 2vw, 1.25rem);
   color: var(--color-text-muted);
-  max-width: 600px;
+  max-width: 37.5rem;
   margin: 0 auto 3rem auto;
   line-height: 1.8;
 }

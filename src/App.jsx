@@ -10,12 +10,15 @@ import Login from './pages/Login';
 import Customise from './pages/Customise';
 import TailorForm from './pages/TailorForm';
 import Marketplace from './pages/Marketplace';
+import About from './pages/About';
+import ScrollToTop from './components/ScrollToTop';
 import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
     <CartProvider>
       <BrowserRouter>
+        <ScrollToTop />
         <NavBar />
         <CartSidebar />
         <main>
@@ -26,6 +29,7 @@ function App() {
             <Route path="/customise" element={<Customise />} />
             <Route path="/tailor-form" element={<TailorForm />} />
             <Route path="/marketplace" element={<Marketplace />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </main>
         <ChatBot />

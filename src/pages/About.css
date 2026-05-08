@@ -1,0 +1,230 @@
+.about-page {
+  padding-top: 100px;
+  min-height: 100vh;
+  background: var(--color-bg-base);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Hero Section ── */
+.about-hero {
+  position: relative;
+  padding: 8rem 0 6rem 0;
+  text-align: center;
+}
+
+.about-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(40, 91, 131, 0.15) 0%, transparent 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── Vision Section ── */
+.about-vision {
+  padding: 4rem 0;
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+}
+
+.vision-text {
+  padding: 4rem 3rem;
+  border-radius: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(209, 189, 164, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-accent-beige);
+  margin-bottom: 2rem;
+}
+
+.vision-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.vision-text p {
+  color: var(--color-text-muted);
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.identity-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.identity-list li {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.identity-list li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent-beige);
+  box-shadow: 0 0 10px rgba(209, 189, 164, 0.5);
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+/* ── Transformation Section ── */
+.about-transformation {
+  padding: 8rem 0;
+  position: relative;
+}
+
+.transformation-header {
+  margin-bottom: 5rem;
+}
+
+.transformation-flow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.flow-step {
+  flex: 1;
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 24px;
+  position: relative;
+}
+
+.step-number {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-bg-base);
+  border: 1px solid rgba(209, 189, 164, 0.2);
+  color: var(--color-accent-beige);
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.2rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 99px;
+  z-index: 2;
+}
+
+.flow-step h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
+  margin-top: 1rem;
+}
+
+.flow-step p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .transformation-flow {
+    flex-direction: column;
+  }
+  .flow-arrow {
+    transform: rotate(90deg);
+    margin: 1rem 0;
+  }
+}
+
+/* ── Values Section ── */
+.about-values {
+  padding-bottom: 8rem;
+}
+
+.values-container {
+  padding: 5rem;
+  border-radius: 40px;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(255,255,255,0.02), rgba(40,91,131,0.05));
+}
+
+.values-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  text-align: left;
+}
+
+.value-item h4 {
+  font-size: 1.25rem;
+  color: white;
+  margin-bottom: 0.75rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.value-item h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 100%;
+  background: var(--color-accent-beige);
+  border-radius: 4px;
+}
+
+.value-item p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}

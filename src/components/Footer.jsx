@@ -1,20 +1,22 @@
 import React from 'react';
 import './Footer.css';
 
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="container footer-container">
         <div className="footer-brand">
-          <a href="/" className="logo footer-logo">
+          <Link to="/" className="logo footer-logo">
             <img src="/icone.svg" alt="DENYX Logo" className="logo-img" />
             <span className="logo-text">DENYX</span>
-          </a>
+          </Link>
           <p className="footer-bio">
             Reinventing denim for a sustainable future. Every piece tells a story of rebirth and conscious craftsmanship.
           </p>
           <div className="footer-socials">
-            <a href="#" className="social-link" aria-label="Instagram">
+            <a href="https://www.instagram.com/denyx.tn" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Instagram">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
             </a>
             <a href="#" className="social-link" aria-label="X (Twitter)">
@@ -29,30 +31,26 @@ const Footer = () => {
         <div className="footer-links-group">
           <h4 className="footer-title">Shop</h4>
           <ul className="footer-links">
-            <li><a href="#">All Products</a></li>
-            <li><a href="#">Bags & Totes</a></li>
-            <li><a href="#">Accessories</a></li>
-            <li><a href="#">New Arrivals</a></li>
+            <li><Link to="/shop">All Products</Link></li>
+            <li><Link to="/customise">Customise</Link></li>
+            <li><Link to="/marketplace">Marketplace</Link></li>
           </ul>
         </div>
 
         <div className="footer-links-group">
           <h4 className="footer-title">About</h4>
           <ul className="footer-links">
-            <li><a href="#">Our Story</a></li>
-            <li><a href="#">Sustainability</a></li>
-            <li><a href="#">Materials</a></li>
-            <li><a href="#">Journal</a></li>
+            <li><Link to="/about#story">Our Story</Link></li>
+            <li><Link to="/about#sustainability">Sustainability</Link></li>
+            <li><Link to="/about#vision">Vision</Link></li>
           </ul>
         </div>
 
         <div className="footer-links-group">
           <h4 className="footer-title">Support</h4>
           <ul className="footer-links">
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Shipping & Returns</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Care Guide</a></li>
+            <li><Link to="/">FAQ</Link></li>
+            <li><Link to="/">Contact Us</Link></li>
           </ul>
         </div>
       </div>

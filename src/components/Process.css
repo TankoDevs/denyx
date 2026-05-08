@@ -1,5 +1,5 @@
 .process-timeline-modern {
-  max-width: 900px;
+  max-width: 56.25rem;
   margin: 0 auto;
   position: relative;
 }
@@ -27,8 +27,13 @@
   align-items: center;
   gap: 2rem;
   padding: 1.5rem 2rem !important;
-  background: rgba(255, 255, 255, 0.03) !important;
-  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.06) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-left: 1px solid rgba(255, 255, 255, 0.09) !important;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.01) !important;
 }
 
 .timeline-number-wrapper {
