@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Sparkles, X, Send, ImagePlus, Loader2, Wand2, Trash2, Download } from 'lucide-react';
 import { uploadImage } from '../utils/cloudinary';
 import './ChatBot.css';
@@ -9,6 +10,7 @@ const WEBHOOK_URL = import.meta.env.VITE_WEBHOOK_URL;
 const IGNORED_PHRASES = ['workflow was started', 'execution was started', 'ok'];
 
 const ChatBot = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [image, setImage] = useState(null);
@@ -270,6 +272,20 @@ const ChatBot = () => {
                     </div>
                   )}
                   {msg.text && <p>{msg.text}</p>}
+                  {msg.isResult && msg.image && (
+                    <button 
+                      className="btn btn-premium" 
+                      style={{ marginTop: '0.75rem', width: '100%', fontSize: '0.85rem', padding: '0.6rem 0', display: 'flex', justifyContent: 'center', gap: '0.5rem' }}
+                      onClick={(e) => {
+                         e.stopPropagation();
+                         setIsOpen(false);
+                         navigate(`/tailor-form?item=own-design&photo=${encodeURIComponent(msg.image)}`);
+                      }}
+                    >
+                      <Sparkles size={14} />
+                      Make this with a Tailor
+                    </button>
+                  )}
                 </div>
               </div>
             ))}

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { X, Minus, Plus, ShoppingBag } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { ModernList, ModernListItem, EmptyState } from './ui/ModernList';
@@ -13,6 +14,7 @@ const CartSidebar = () => {
     removeFromCart, 
     cartTotal 
   } = useCart();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (isCartOpen) {
@@ -102,7 +104,10 @@ const CartSidebar = () => {
               <span>{cartTotal.toFixed(2)} TND</span>
             </div>
             <p className="cart-taxes-note">Taxes and shipping calculated at checkout</p>
-            <button className="btn btn-primary w-100" onClick={() => alert("Checkout flow coming soon!")}>
+            <button className="btn btn-primary w-100" onClick={() => {
+              setIsCartOpen(false);
+              navigate('/checkout');
+            }}>
               Checkout
             </button>
           </div>

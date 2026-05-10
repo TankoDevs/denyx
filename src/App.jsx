@@ -11,6 +11,7 @@ import Customise from './pages/Customise';
 import TailorForm from './pages/TailorForm';
 import Marketplace from './pages/Marketplace';
 import About from './pages/About';
+import Checkout from './pages/Checkout';
 import ScrollToTop from './components/ScrollToTop';
 import { CartProvider } from './context/CartContext';
 
@@ -30,6 +31,7 @@ function App() {
             <Route path="/tailor-form" element={<TailorForm />} />
             <Route path="/marketplace" element={<Marketplace />} />
             <Route path="/about" element={<About />} />
+            <Route path="/checkout" element={<Checkout />} />
           </Routes>
         </main>
         <ChatBot />
